@@ -1,0 +1,43 @@
+# .NET build, publish and NuGet outputs
+bin/
+obj/
+artifacts/
+.packages/
+*.nupkg
+*.snupkg
+
+# IDE state; shared extension recommendations remain versioned
+.vs/
+.idea/
+.vscode/settings.json
+*.user
+*.suo
+*.sln.docstates
+
+# Local tooling, UI captures, tests and diagnostics
+.review/
+.setup/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.log
+
+# Private SQL data and backups; SQL source scripts remain versioned
+*.mdf
+*.ndf
+*.ldf
+*.bak
+*.trn
+
+# Environment configuration and signing credentials
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

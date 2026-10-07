@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <RootNamespace>University_Management_System_2</RootNamespace>
+    <AssemblyName>University Management System</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <ApplicationDefaultFont>Segoe UI, 10.5pt</ApplicationDefaultFont>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.1" />
+    <Content Include="UniversityDataBase.mdf;UniversityDataBase_log.ldf" Condition="Exists('UniversityDataBase.mdf') And Exists('UniversityDataBase_log.ldf')">
+      <Link>seed\%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="database\Schema.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="database\Schema.sql" LogicalName="University_Management_System_2.Schema.sql" />
+  </ItemGroup>
+</Project>
